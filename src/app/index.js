@@ -1,10 +1,19 @@
-import styles from "./app.module.scss";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import React from "react";
+
+import Home from "../pages/home";
+import Main from "../layouts/Main";
 
 function App() {
   return (
-    <main className={styles.container}>
-      <h1>Hello React1</h1>
-    </main>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Main />}>
+          <Route path="/" element={<Home />} />
+          <Route path="/videos" element={<h1>Video Page</h1>} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
   );
 }
 
